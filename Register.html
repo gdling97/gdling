@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>BoeyRestaurant</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="Foodcss.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {font-family: "Lato", sans-serif}
+.mySlides {display: none}
+</style>
+<body>
+
+<!-- Navbar -->
+<div class="top">
+  <div class="bar black card">
+    <a class="bar-item button padding-large hide-medium hide-large right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="#" class="bar-item button padding-large">HOME</a>
+     <a href="Register.html" class="bar-item button padding-large hide-small">REGISTER</a>
+     <a href="delivery.html" class="bar-item button">Delivery</a>
+     <a href="Reservation.html" class="bar-item button">Reservation</a>
+     <a href="offer.html" class="bar-item button">Member Offer</a>
+    <a href="contact.html" class="bar-item button padding-large hide-small">CONTACT</a>
+    
+   </div>
+</div>
+
+<!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
+<div id="navDemo" class="bar-block black hide hide-large hide-medium top" style="margin-top:46px">
+       <a href="#Register.html" class="bar-item button padding-large hide-small">REGISTER</a>
+     <a href="delivery.html" class="bar-item button">Delivery</a>
+     <a href="Reservation.html" class="bar-item button">Reservation</a>
+     <a href="offer.html" class="bar-item button">Member Offer</a>
+    <a href="contact.html" class="bar-item button padding-large hide-small">CONTACT</a>
+    
+</div>
+
+<!-- Page content -->
+<div class="content" style="max-width:2000px;margin-top:46px">
+
+  
+  <!-- The Tour Section -->
+  <div class="black" id="tour">
+    <div class="container content padding-64" style="max-width:800px">
+      <h2 class="wide center">REGISTER</h2>
+      <p class="opacity center"><i>Register become our member now</i></p><br>
+       
+        <div class="col center">
+        <form action="/action_page.php" target="_blank">
+          <div class="row-padding" style="margin:0 -16px 8px -16px">
+            <div class="half">
+              <input class="input border" type="text" placeholder="Name" required name="Name">
+            </div>
+            <div class="half">
+              <input class="input border" type="text" placeholder="Email" required name="Email">
+            </div>
+          </div>
+          <input class="input border" type="text" placeholder="Message" required name="Message">
+          <button class="button black section right" type="submit">SEND</button>
+        </form>
+      </div>
+     
+
+      
+    </div>
+  </div>
+
+  
+<!-- End Page Content -->
+</div>
+
+
+<script>
+// Automatic Slideshow - change image every 4 seconds
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}    
+  x[myIndex-1].style.display = "block";  
+  setTimeout(carousel, 4000);    
+}
+
+// Used to toggle the menu on small screens when clicking on the menu button
+function myFunction() {
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("show") == -1) {
+    x.className += " show";
+  } else { 
+    x.className = x.className.replace(" show", "");
+  }
+}
+
+// When the user clicks anywhere outside of the modal, close it
+var modal = document.getElementById('ticketModal');
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+} 
+</script>
+
+</body>
+</html>
